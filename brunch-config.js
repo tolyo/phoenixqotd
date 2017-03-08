@@ -55,10 +55,10 @@ exports.config = {
       presets: ['es2015', 'react']
     },
 
-    eslint: {
-      pattern: /^web\/static\/.*\.js?x?$/,
-      warnOnly: true
-    },
+    // eslint: {
+    //   pattern: /^web\/static\/.*\.js?x?$/,
+    //   warnOnly: true
+    // },
 
     htmlPages: {
       destination: path => {
