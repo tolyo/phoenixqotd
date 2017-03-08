@@ -2,7 +2,9 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      joinTo: {
+        'js/app.js':  [/^(?!web\/static)/,/^web\/static/]
+      }
 
       // To use a separate vendor.js bundle, specify two files path
       // http://brunch.io/docs/config#-files-
@@ -24,9 +26,6 @@ exports.config = {
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
       }
-    },
-    templates: {
-      joinTo: "js/app.js"
     }
   },
 
@@ -57,10 +56,29 @@ exports.config = {
     }
   },
 
+  plugins: {
+    babel: {
+      ignore: [/web\/static\/vendor/],
+      presets: ['es2015', 'react']
+    },
+
+    eslint: {
+      pattern: /^app\/.*\.js?x?$/,
+      warnOnly: true
+    },
+
+    htmlPages: {
+      destination: path => {
+        return path.replace(/^web\/static[\/\\]/, '');
+      }
+    }
+  },
+
   modules: {
     autoRequire: {
       "js/app.js": ["web/static/js/app"]
-    }
+    },
+    nameCleaner: path => path.replace(/^web\/static\//, '')
   },
 
   npm: {

@@ -16,7 +16,7 @@ defmodule Phoenixqotd.Router do
   scope "/", Phoenixqotd do
     pipe_through :browser # Use the default browser stack
 
-    get "/hello/:name", HelloController, :world
+    get "/quotes", QuoteController, :index
     get "/", PageController, :index
   end
 
