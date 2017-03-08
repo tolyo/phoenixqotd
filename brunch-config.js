@@ -56,7 +56,7 @@ exports.config = {
     },
 
     eslint: {
-      pattern: /^app\/.*\.js?x?$/,
+      pattern: /^web\/static\/.*\.js?x?$/,
       warnOnly: true
     },
 
