@@ -3,9 +3,11 @@ defmodule Phoenixqotd.QuoteController do
 
   plug :action
 
-  def world(conn) do
-      conn
-        |> put_resp_header("content-type", "text/html; charset=utf-8")
-        |> Plug.Conn.send_file(200, "priv/static/foobar.html")
+  def get(conn, _params) do
+
+  end
+
+  def post(conn, _params) do
+
   end
 end
