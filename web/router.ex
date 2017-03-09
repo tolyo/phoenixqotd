@@ -16,15 +16,14 @@ defmodule Phoenixqotd.Router do
   scope "/", Phoenixqotd do
     pipe_through :browser # Use the default browser stack
 
-    get "/quote", QuoteController, :get
-    post "/quote", QuoteController, :post
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-   scope "/api", Phoenixqotd do
+   # Other scopes may use custom stacks.
+   scope "/", Phoenixqotd do
      pipe_through :api
 
-     resources "/quote", QuoteController
+     get "/quote", QuoteController, :get
+     post "/quote", QuoteController, :post
    end
 end

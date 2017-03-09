@@ -15,7 +15,10 @@ export default class App extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({
+        author : this.state.author,
+        quote  : this.state.newQuote
+      })
     });
   }
 

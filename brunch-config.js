@@ -68,9 +68,6 @@ exports.config = {
   },
 
   modules: {
-    autoRequire: {
-      "js/app.js": ["web/static/js/app"]
-    },
     nameCleaner: path => path.replace(/^web\/static\//, '')
   },
 
